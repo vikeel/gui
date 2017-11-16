@@ -1,0 +1,57 @@
+/*!
+ *  v-normalize.css
+ *  Founded in 2016
+ *  Created by Vikeel
+**/
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 12px;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+body, h1, h2, h3, h4, p, blockquote,
+ul, ol, li, pre, form, fieldset,
+legend, button,input, textarea, th, td {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+ul {
+  list-style:none;
+}
+a {
+  text-decoration:none;
+}
+a:hover {
+  text-decoration:underline;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
