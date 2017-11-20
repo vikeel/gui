@@ -1,32 +1,26 @@
 body {
-  background-color: #27ad75;
+  background-color: #fff;
+}
+.container:after, .header:after, .skill:after {
+  content: " ";
+  display: table;
+  clear: both;
 }
 .container {
   width: 1170px;
   margin: 0 auto;
 }
-.container:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-.article {
-  padding: 15px 0;
-}
 .header {
   position: relative;
   width: 100%;
-  height: 240px;
-  background-color: rgba(39,173,117,.9);
-}
-.header:after {
-  content: " ";
-  display: table;
-  clear: both;
+  height: 340px;
+  background-image: url(../img/promo-bg.jpg);
+  background-attachment: fixed;
 }
 .header .logo {
-  width: 68px;
-  height: 68px;
+  width: 76px;
+  height: 76px;
+  border: 8px solid rgba(45,200,78,.6);
   border-radius: 68px;
   margin: 0 auto 30px;
   overflow: hidden;
@@ -36,6 +30,9 @@ body {
 .header .logo img {
   max-width: 68px;
   height: auto;
+}
+.header .mark {
+  padding-top: 38px;
 }
 .synopsis {
   position: absolute;
@@ -50,62 +47,42 @@ body {
   max-width: 1220px;
   margin: 0 auto;
   padding: 20px 10px;
-  border-bottom: 1px dashed #535353;
+  border-bottom: 1px dashed #ccc;
 }
-.bg {
-  background-color: rgba(0, 0, 0, 0.4);
-
-}
-.skill:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-.htm {
-  width: 28%;
-  float: left;
-  text-align: center;
-}
-
 .skill ul a {
   display: inline-block;
   padding: 6px 10px;
   margin: 5px 0;
-  border-radius: 12px;
+  border: 1px solid #2f9b55;
+  border-radius: 16px;
   line-height: 14px;
-  color: #eee;
-  background-color: rgba(255, 255, 255, 0.4);
+  color: inherit;
 }
 .skill ul a:hover {
-  background-color: #396;
+  text-decoration: none;
+  color: #fff;
+  background-color: #2f9b55;
 }
-.exploring {
-  border: 1px solid #999;
+.col {
+  padding: 15px 0;
 }
-.level-2 li {
-  display: inline;
+.col .skill:last-child {
+  border-bottom: 0;
 }
-.level-3 li {
-  display: inline;
-}
-/*.level-2 li:nth-child(even) {
-  margin-left: 100px;
-  margin-right: 100px;
-}*/
-.js {
-  width: 44%;
+.type {
   float: left;
   text-align: center;
+}
+.htm {
+  width: 28%;
+}
+.js {
+  width: 44%;
 }
 .css {
   width: 28%;
-  float: left;
-  text-align: center;
 }
 .level-1 {
-  text-align: center;
-}
-.level-2 {
   text-align: center;
 }
 .level-1 li {
@@ -115,12 +92,18 @@ body {
   margin-left: 100px;
   margin-right: 100px;
 }
+.level-2 {
+  text-align: center;
+}
+.level-2 li {
+  display: inline;
+}
 .portal {
   padding: 38px;
   background-color: #32092b;
   text-align: center;
 }
-.btn {
+.portal .btn {
   display: inline-block;
   padding: 10px 26px;
   border: 1px solid #fff;
@@ -137,5 +120,5 @@ body {
   max-width: 768px;
   margin: 0 auto;
   text-align: center;
-  color: #eee;
+  color: inherit;
 }
