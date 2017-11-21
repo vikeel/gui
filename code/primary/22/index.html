@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>图片预加载</title>
+    <style media="screen">
+
+      .box {
+        text-align: center;
+      }
+      .btn {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 0 10px;
+        margin-right: 50px;
+        color: #333;
+      }
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #eee;
+        text-align: center;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="http://img06.tooopen.com/images/20170826/tooopen_sy_222506379125.jpg"
+      id="img" width="768px"/>
+      <p>
+        <a href="javascript:;" class="btn" data-control="prev">上一张</a>
+        <a href="javascript:;" class="btn" data-control="next">下一张</a>
+      </p>
+    </div>
+    <div class="loading">
+      <p class="progress">0%</p>
+    </div>
+    <script src="../../../js/jquery-1.12.4.js"></script>
+    <script src="../../../js/preload.js"></script>
+    <script type="text/javascript">
+      var imgs = [
+        "http://pic.58pic.com/58pic/15/21/52/82E58PICgsM_1024.jpg",
+        "http://img06.tooopen.com/images/20170913/tooopen_sy_224452993861.jpg",
+        "http://pic.58pic.com/58pic/14/50/52/34z58PICKMw_1024.jpg",
+        "http://img.zcool.cn/community/0109615715aa796ac7251343d48f9a.jpg",
+        "http://img06.tooopen.com/images/20170916/tooopen_sy_224744914937.jpg",
+        "http://img06.tooopen.com/images/20170814/tooopen_sy_220490839847.jpg"
+      ]
+      var index = 0,
+          l = imgs.length,
+          count = 0,
+          $progress = $('.progress');
+      $.preload(imgs, {
+        each: function(count) {
+          $progress.html(Math.round((count + 1) / l * 100) + '%');
+        },
+        all: function() {
+          $('.loading').hide();
+          document.title = '1/' + l;
+        }
+      })
+      $('.btn').on('click', function() {
+        if('prev' === $(this).data('control')) {
+          index = Math.max(0, --index)
+        }else {
+          index = Math.min(l - 1, ++index);
+        }
+        document.title = (index + 1) + '/' + l;
+        $('#img').attr('src', imgs[index]);
+      })
+    </script>
+  </body>
+</html>
