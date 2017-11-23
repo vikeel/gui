@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>全文检索功能</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../../css/v-normalize.css">
+    <style media="screen">
+      body {
+        background-color: #f6f8fa;
+      }
+      /*.search:after {
+        content: '';
+        display: table;
+        clear: both;
+      }*/
+      .search {
+        position: relative;
+        width: 314px;
+        margin: 200px auto;
+      }
+      .search form {
+        /*position: relative;*/
+        background-color: #33a1e1;
+      }
+      .search .search-input-text {
+        width: 280px;
+        padding: 6px 14px 6px 6px;
+        border: 1px solid #33a1e1;
+        outline: none;
+        line-height: inherit;
+      }
+      .search .search-input-button {
+        position: absolute;
+        right: 0;
+        width: 34px;
+        height: 33px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        background: url(../../../img/search.png) right center no-repeat;
+        background-color: #33a1e1;
+      }
+      .search .suggest {
+        width: 280px;
+        border: 1px solid;
+        border-color: transparent #aaa #aaa;
+        background-color: #fff;
+      }
+      .search .suggest li a {
+        display: block;
+        padding: 5px;
+        line-height: inherit;
+      }
+      .search .suggest li a:hover {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search">
+      <form action="index.html" method="post">
+        <input type="text" class="search-input-text" id="search_input" />
+        <input type="submit" class="search-input-button" value="" />
+      </form>
+      <ul class="suggest" id="search_suggest" style="display:none;"></ul>
+    </div>
+    <script src="../../../js/jquery-1.12.4.js"></script>
+    <script>
+      var data = [  // 模拟数据
+        "数据a",
+        "数据b",
+        "数据b",
+        "数据c",
+        "数据d",
+        "数据d",
+        "数据d",
+        "数据c",
+        "数据c",
+        "数据c",
+        "数据c"
+      ];
+      var Search = (function() {  // 自执行匿名函数
+        // 私有方法
+        var _bind = function(_this_) {
+          _this_.input.on('keyup', function() {
+            _this_.render();
+          })
+        };
+        // 获取关键字
+        var _getKey = function(_this_) {
+          return $.trim(_this_.input.val());
+        }
+        // 查找匹配逻辑
+        var _serSuggest = function(_this_) {
+          var html = '';
+          if(!_getKey(_this_)) return;
+          data.forEach(function(i) {
+            if(i.search(_getKey(_this_)) < 0) {
+              return;
+            }
+            html += '<li><a href="javascript:;">' + i + '</a></li>';
+          });
+          return html;
+        }
+        // 构造函数
+        var SearchSuggestFun = function(config) {};
+        // 初始化配置
+        SearchSuggestFun.prototype.init = function(config) {
+          this.input = $(config.id);
+          _bind(this);
+          return this;
+        };
+        SearchSuggestFun.prototype.render = function() {
+          $('#search_suggest').html(_serSuggest(this));
+          $('#search_suggest').show().css({
+            display: 'block'
+          });
+        };
+        // 返回构造函数
+        return SearchSuggestFun;
+      })();
+      $(function() {
+        new Search().init({id:'#search_input'});
+      })
+    </script>
+  </body>
+</html>
