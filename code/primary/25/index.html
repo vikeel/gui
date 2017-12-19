@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>滚动加载</title>
+  <style>
+  	* {
+  		box-sizing: border-box;
+  	}
+  	body, ul {
+  		margin: 0;
+  		padding: 0;
+  	}
+  	.container {
+  		width: 600px;
+  		margin: 0 auto;
+  		background-color: #f8f8f8;
+  	}
+  	.artlist {
+  		list-style: none;
+  	}
+  	.artlist .item {
+  		width: 100%;
+  		height: 150px;
+  		border: 1px solid #aaa;
+  		margin-top: 12px;
+  		background-color: #f6f8fa;
+  	}
+  	.handler-load {
+  		width: 100%;
+  		height: 38px;
+  		border: 1px solid #ccc;
+  		margin-top: 30px;
+  		background-color: #eee;
+  		text-align: center;
+  	}
+  </style>
+</head>
+<body>
+  <div class="container">
+  	<ul class="artlist" id="artlist">
+  	</ul>
+  </div>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+
+  	var data = ["第1个标题","第2个标题","第3个标题","第4个标题","第5个标题","第6个标题","第7个标题","第8个标题","第9个标题","第10个标题","第11个标题","第12个标题","第13个标题","第14个标题","第15个标题","第16个标题","第17个标题","第18个标题","第19个标题","第20个标题","第21个标题","第22个标题","第23个标题","第24个标题","第25个标题","第26个标题","第27个标题","第28个标题","第29个标题","第30个标题","第31个标题","第32个标题","第33个标题","第34个标题","第35个标题","第36个标题","第37个标题","第38个标题","第39个标题","第40个标题"];
+  	var container = document.querySelector('.container');
+  	var item = document.getElementById('artlist');
+  	// 去除childNodes的#text和\s
+  	function del(elem) {
+  		var it = [];
+  		for(var i = 0; i < elem.childNodes.length; i++) {
+  			if(elem.childNodes[i].nodeType === 1) {
+  				it.push(elem.childNodes[i]);
+  			}
+  		}
+  		return it;
+  	}
+  	(function() {
+  		var fragment = document.createDocumentFragment();
+  		var html = [];
+		var li = null;
+  		var i;
+  		for(i=0; i<6; i++) {
+  			li = document.createElement('li');
+			li.className = "item";
+			li.appendChild(document.createTextNode(data[i]));
+			fragment.appendChild(li);
+  		}
+  		item.appendChild(fragment);
+  	}());
+	function createLi(num) {
+		var fragment = document.createDocumentFragment();
+		var li = null;
+		for(var i = num; i < num + 6; i++) {
+			li = document.createElement('li');
+			li.className = "item";
+			li.appendChild(document.createTextNode(data[i]));
+			fragment.appendChild(li);
+		}
+		item.appendChild(fragment);
+	}
+	// 创建手动点击加载更多item片段
+	function loadMore(elem) {
+		if(!document.querySelector('.handler-load')) {
+			var fragment = document.createDocumentFragment();
+			var div = document.createElement('div');
+			div.className = 'handler-load';
+			div.appendChild(document.createTextNode('加载更多...'));
+			fragment.appendChild(div);
+			elem.appendChild(fragment);
+		}
+	}
+	// 浏览器视窗高度
+	var getClientHeight = document.documentElement.clientHeight;
+	// 滚动监听，1s触发一次
+  	window.addEventListener('scroll', function() {
+  		setTimeout(function() {
+  			// 获取最后一个item的text
+  			var getItemNum = del(item).length;
+			// 滚动条距视窗顶部高度
+			var getScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+			// 页面内容的实际高度
+			var getDocumentHeight = document.body.scrollHeight;
+			// 滚动条距离视窗底部的高度
+			var sToBrowser = getDocumentHeight - getScrollTop - getClientHeight;
+			// item小于30继续加载
+  			if(getItemNum < 30) {
+  				// 底部高度<=0时加载
+  				if(sToBrowser <= 0) {
+  					createLi(getItemNum);
+  				}
+  			// 否则显示加载更多按钮
+  			}else {
+  				loadMore(container);
+  				var loadmore = document.querySelector('.handler-load');
+  				loadmore.onclick = function() {
+  					createLi(getItemNum);
+  				}
+  			}
+  		}, 1000);
+  	}, false);
+  </script>
+</body>
+</html>
