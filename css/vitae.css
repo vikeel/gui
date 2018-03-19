@@ -1,124 +1,282 @@
-body {
-  background-color: #fff;
+* {
+  box-sizing: border-box;
 }
-.container:after, .header:after, .skill:after {
-  content: " ";
-  display: table;
-  clear: both;
+body, ul {
+  margin: 0;
 }
-.container {
-  width: 1170px;
-  margin: 0 auto;
+ul {
+  list-style: none;  
 }
-.header {
-  position: relative;
-  width: 100%;
-  height: 340px;
-  background-image: url(../img/promo-bg.jpg);
-  background-attachment: fixed;
-}
-.header .logo {
-  width: 76px;
-  height: 76px;
-  border: 8px solid rgba(45,200,78,.6);
-  border-radius: 68px;
-  margin: 0 auto 30px;
+html, body {
+  height: 100%;
+  font-size: 14px;
+  color: #333;
   overflow: hidden;
-  text-align: center;
-  background-color: #39c;
 }
-.header .logo img {
-  max-width: 68px;
+a {
+  text-decoration: none;
+}
+/**
+ * page style
+ */
+#container {
+  height: 100%;
+}
+#pages {
+  position: relative;
+  height: 100%;
+}
+.page {
+  height: 100%;
+}
+#page1,
+#page2,
+#page3,
+#page4,
+#page5 {
+  background-size: cover;
+}
+#page1 {
+  background-color: #22B573;
+}
+#page2 {
+  background-color: #4dd0e1;
+}
+#page3 {
+  background-color: #e8b118;
+}
+#page4 {
+  background-color: #129de7;
+  color: #fefefe;
+}
+#page5 {
+  background-color: #ed6461;
+}
+.left {
+  float: left;
+  width: 20%;
+}
+/**
+ * current page
+ */
+.p_active {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  transition: 1.5s;
+}
+/**
+ * menu
+ */
+#menus {
+  position: fixed;
+  top: 50%;
+  right: 4em;
+  z-index: 99;
+  margin-top: -90px;
+  width: 80px;
+  min-width: 80px;
   height: auto;
+  text-align: center;
 }
-.header .mark {
-  padding-top: 38px;
+#menus a {
+  display: block;
+  margin: 8px 0;
+  padding: 3px 10px;
+  border: 1px solid #fefefe;
+  font-size: inherit;
+  color: #fefefe;
+  text-decoration: none;
+  background-color: rgba(255,255,255,.2);
+}
+.m_active {
+  background-color: #007fff;
+}
+
+/**
+ * wrap
+ */
+.wrap {
+  width: 768px;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 6em;
+}
+.title h2 {
+  margin: 0;
+  padding: 2em 0;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  color: #fefefe;
+}
+/**
+ * 首屏样式
+ */
+.avatars {
+  border-radius: 50%;
+}
+.avatars img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
 .synopsis {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  max-width: 768px;
-  margin-left: -384px;
-  text-align: center;
-  color: #fff;
+  padding: 2em 0;
+  font-size: 1.2rem;
+  color: #fefefe;
 }
+.synopsis li {
+  line-height: 28px;
+}
+.synopsis span {
+  display: inline-block;
+  width: 70px;
+  min-width: 70px;
+  text-align: right;
+}
+.synopsis a {
+  color: #fefefe;
+}
+.summary {
+  padding: 2em 0;
+  font-size: 1.2rem;
+  line-height: 24px;
+  color: #fefefe;
+}
+/**
+ * 技术栈样式
+ */
 .skill {
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 20px 10px;
-  border-bottom: 1px dashed #ccc;
+  padding: .5em .8em;
 }
-.skill ul a {
-  display: inline-block;
-  padding: 6px 10px;
-  margin: 5px 0;
-  border: 1px solid #2f9b55;
-  border-radius: 16px;
-  line-height: 14px;
+.skill li {
+  color: #fefefe;
+  display: block;
+  padding: .3em .6em;
+  border: 2px solid;
+  border-color: transparent transparent transparent #fefefe;
+  font-size: 1.2rem;
+}
+.skill li:hover {
+  background-color: #fefefe;
   color: inherit;
 }
-.skill ul a:hover {
-  text-decoration: none;
-  color: #fff;
-  background-color: #2f9b55;
+.skill .s_active {
+  background-color: #fefefe;
+  font-size: 1.2rem;
+  color: inherit;
 }
-.col {
-  padding: 15px 0;
+/**
+ * 工作经历样式
+ */
+.experiences {
+  position: relative;
+  margin: 2em auto;
+  color: #f7f7f7;
 }
-.col .skill:last-child {
-  border-bottom: 0;
+.experiences:before {
+  content: '';
+  width: .2em;
+  height: 100%;
+  position: absolute;
+  left: 21%;
+  background-color: #e08b37;
 }
-.type {
+.experiences ul{
+  margin: .6em 0;
+  padding: 0;
+}
+.experiences li {
+  display: inline-block;
+  padding: .3em .8em;
+}
+.year {
+  width: 22%;
+  font-size: 1.2rem;
+  text-align: right;
+  margin-right: 5px;
+}
+.month {
+  width: 22%;
+  font-size: 1.1rem;
+  text-align: right;
+  margin-right: 5px;
+}
+.status {
+  position: relative;
+  font-size: 1.1rem;
+  background-color: #e87c0d;
+  border-radius: 3px;
+}
+.status:before {
+  content: ' ';
+  width: 0;
+  height: 0;
+  border: 6px solid;
+  border-color: transparent #e87c0d transparent transparent;
+  position: absolute;
+  left: -12px;
+  top: 28%;
+}
+/**
+ * 项目样式
+ */
+.project {
+  padding: 1.2em 2em;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+}
+.banner a {
+  display: block;
+  font-size: 1.5rem;
+  color: #fefefe;
+  text-decoration: underline;
+}
+.to {
+  text-align: center;
+}
+.to p {
+  font-size: 1.2em;
+  color: #fefefe;
+}
+/**
+ * 栅格
+ */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+.col-1, .col-2, .col-3, .col-4, .col-5,
+.col-6, .col-7, .col-8, .col-9, .col-10,
+.col-11, .col-12 {
   float: left;
-  text-align: center;
+  min-height: 1px;
 }
-.htm {
-  width: 28%;
+/**
+ * 盒子位置
+ * @center @left @right
+ */
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
-.js {
-  width: 44%;
+.left {
+  float: left;
 }
-.css {
-  width: 28%;
-}
-.level-1 {
-  text-align: center;
-}
-.level-1 li {
-  display: inline;
-}
-.level-1 li:nth-child(even) {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-.level-2 {
-  text-align: center;
-}
-.level-2 li {
-  display: inline;
-}
-.portal {
-  padding: 38px;
-  background-color: #32092b;
-  text-align: center;
-}
-.portal .btn {
-  display: inline-block;
-  padding: 10px 26px;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  color: #eee;
-  /*background-color: #39c;*/
-}
-.footer {
-  width: 100%;
-  margin-top: 38px;
-  padding: 12px;
-}
-.footer .copyright {
-  max-width: 768px;
-  margin: 0 auto;
-  text-align: center;
-  color: inherit;
+.right {
+  float: right;
 }

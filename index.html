@@ -2,107 +2,170 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>个人前端知识图谱</title>
+<title>李清的简历</title>
 <meta name="keywords" content=""/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" href="css/v-normalize.css"/>
-<link rel="stylesheet" href="css/vitae.css"/>
+<link rel="stylesheet" href="./css/v-normalize.css"/>
+<link rel="stylesheet" href="./css/vitae.css"/>
 </head>
 <body>
-  <div class="header">
-    <div class="container">
-      <div class="synopsis">
-        <div class="logo">
-          <img src="img/me.png" alt="image">
+  <div id="container">
+    <div id="pages">
+      <!-- five pages -->
+      <div id="page1" class="page p_active">
+        <div class="wrap">
+          <div class="col-12">
+            <div class="col-4"></div>
+            <div class="col-4 avatars">
+              <img src="./img/me.png">
+            </div>
+            <div class="col-4"></div>
+          </div>
+          <div class="col-12">
+            <div class="col-6 synopsis">
+              <ul>
+                <li><span>姓名</span> | 李清</li>
+                <li><span>手机</span> | 18709256846</li>
+                <li><span>邮箱</span> | 251500399@qq.com</li>
+                <li><span>所在地</span> | 陕西 - 西安</li>
+                <li><span>DelBug</span> | <a href="http://www.delbug.cc">点击进入</a></li>
+                <li><span>GitHub</span> | <a href="https://github.com/vikeel">点击进入</a></li>
+                <li><span>代码收录</span> | <a href="https://vikeel.github.io/code.html">点击进入</a></li>
+              </ul>
+            </div>
+            <div class="col-6 summary">
+              <p>李清，男，27岁，祖籍陕西。 毕业于西安航空学院，电子信息工程专业。 15年开始进入前端开发行业，现专注于web前端开发,更期望在业务逻辑层面有所建树。</p>
+              <p>性格沉稳、负责，有耐心，问题总会有解决办法，喜欢化繁为简。</p>
+            </div>
+          </div>
         </div>
-        <p>Vikeel，男，26岁，祖籍陕西。
-          毕业于西安航空学院，电子信息工程专业，
-          因在校期间萌生网站开发兴趣，现专注于web前端开发,偏爱JavaScript
-        </p>
-        <div class="mark">
-          <a href="https://github.com/vikeel" target="_blank">
-            <svg class="mark-github" height="38" version="1.1" viewBox="0 0 16 16" width="38">
-              <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-              </path>
-            </svg>
-          </a>
-          <a href="http://www.delbug.cc" target="_blank">
-            <svg version="1.1" baseProfile="full" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="19" cy="19" r="19" fill="black" />
-              <text x="20" y="30" font-size="34" text-anchor="middle" fill="#ccc">B</text>
-            </svg>
-          </a>
+      </div>
+      <div id="page2" class="page">
+        <div class="wrap">
+          <div class="title">
+            <h2>掌握技术</h2>
+          </div>
+          <div class="skills">
+            <ul class="col-3 skill">
+              <li class="s_active">语言</li>
+              <li>HTML/HTML5</li>
+              <li>CSS/CSS3</li>
+              <li>JavaScript</li>
+              <li>nodeJs</li>
+              <li>MongoDB</li>
+            </ul>
+            <ul class="col-3 skill">
+              <li class="s_active">思想</li>
+              <li>W3C标准</li>
+              <li>语义化</li>
+              <li>表现与结构分离</li>
+              <li>前后端分离</li>
+              <li>响应式设计</li>
+            </ul>
+            <ul class="col-3 skill">
+              <li class="s_active">框架</li>
+              <li>BootStrap</li>
+              <li>VueJs</li>
+              <li>Express</li>
+            </ul>
+            <ul class="col-3 skill">
+              <li class="s_active">技能</li>
+              <li>Git</li>
+              <li>Webpack</li>
+              <li>Ajax</li>
+              <li>Linux</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="page3" class="page">
+        <div class="wrap">
+          <div class="title">
+            <h2>工作经历</h2>
+          </div>
+          <div class="experiences">
+            <ul>
+              <li class="year">2013年</li>
+            </ul>
+            <ul>
+              <li class="month">3月</li><li class="status">校招进入瑞仪光电实习（网络系统助理工程师）</li>
+            </ul>
+            <ul>
+              <li class="year">2015年</li>
+            </ul>
+            <ul>
+              <li class="month">6月</li><li class="status">瑞仪光电离职，参加前端开发培训</li>
+            </ul>
+            <ul>
+              <li class="month">11月</li><li class="status">进入昌硕科技（上海）有限公司（网站开发工程师）</li>
+            </ul>
+            <ul>
+              <li class="year">2017年</li>
+            </ul>
+            <ul>
+              <li class="month">5月</li><li class="status">昌硕科技离职，同月进入上海白墨广告有限公司（web前端开发）</li>
+            </ul>
+            <ul>
+              <li class="year">2018年</li>
+            </ul>
+            <ul>
+              <li class="month">3月</li><li class="status">离职</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="page4" class="page">
+        <div class="wrap">
+          <div class="title">
+            <h2>项目经历</h2>
+          </div>
+          <div class="col-4 project">
+            <div class="banner">
+              <a>二手物品信息发布系统</a href="javascript:">
+            </div>
+            <p>1.员工可前端通过输入工号发布物品信息，前端展示； </p>
+            <p>2.员工可通过自己的工号修改，删除物品信息，设置物品交易状态； </p>
+            <p>3.超过交易期限物品信息自动关闭； </p>
+            <p>4.使用express框架 + vue + axios开发；</p>
+          </div>
+          <div class="col-4 project">
+            <div class="banner">
+              <a href="http://www.1992zyh.com/index.html">正誉智能科技官网</a href="javascript:">
+            </div>
+            <p>公司外包项目，与另外一名PHP程序员完成，主要使用三方工具库Bootstrap、animate等实现页面布局，动态效果的实现</p>
+          </div>
+          <div class="col-4 project">
+            <div class="banner">
+              <a href="http://www.delbug.cc">DelBug内容管理系统</a href="javascript:">
+            </div>
+            <p>个人独立设计开发，项目采用前后端分离，基于webpack、vue-li构建项目，包括 Node + express的服务端开发，mongodb数据存储，vue+axios做前端组件开发</p>
+          </div>
+        </div>
+      </div>
+      <div id="page5" class="page">
+        <div class="wrap">
+          <div class="title">
+            <h2>感谢您来访！快联系我吧~</h2>
+          </div>
+          <div class="col-12 to">
+            <p>QQ： 251500399</p>
+            <p>邮箱： 251500399@qq.com</p>
+            <p>电话： 18709256846</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="article">
-    <div class="col">
-      <div class="skill">
-        <div class="type htm">
-          <ul class="level-1">
-            <li><a href="#" title="一份清晰合理的Document Html">HTML</a></li>
-          </ul>
-          <ul class="level-2">
-            <li><a href="#">利于SEO</a></li>
-            <li><a href="#">利于页面结构优化</a></li>
-          </ul>
-        </div>
-        <div class="type js">
-          <ul class="level-1">
-            <li><a href="#" title="稳定，高效的控制程序">JavaScript</a></li>
-          </ul>
-          <ul class="level-2">
-            <li><a href="#">DOM2级事件</a></li>
-            <li><a href="#">核心/面向对象编程</a></li>
-            <li><a href="#">Ajax通信</a></li>
-            <li><a href="#">交互安全</a></li>
-          </ul>
-        </div>
-        <div class="type css">
-          <ul class="level-1">
-            <li><a href="#" title="一幅美而不腻的用户界面">CSS</a></li>
-          </ul>
-          <ul class="level-2">
-            <li><a href="#">布局</a></li>
-            <li><a href="#">CSS兼容</a></li>
-            <li><a href="#">CSS3动画</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="skill">
-        <ul class="level-1">
-          <li><a href="#">BootStrap</a></li>
-          <li><a href="#">jQuery</a></li>
-          <li><a href="#">vueJs</a></li>
-          <li><a href="#">less</a></li>
-        </ul>
-      </div>
-      <div class="skill">
-        <ul class="level-1">
-          <li><a href="#">前端工程
-            webpack构建打包
-            ES6模块化开发</a></li>
-          </ul>
-        </div>
-        <div class="skill">
-          <ul class="level-1">
-            <li><a href="#">ES6</a></li>
-            <li><a href="#">NodeJs</a></li>
-            <li><a href="#">MongoDB</a></li>
-            <li><a href="#">Nginx</a></li>
-          </ul>
-        </div>
-    </div>
-    <div class="portal">
-      <a class="btn" href="code.html">代码收录</a>
+    <div id="menus">
+      <!-- menu -->
+      <a href="javascript:" class="menu m_active" id="menu1" class="m_active">简介</a>
+      <a href="javascript:" class="menu" id="menu2">技术栈</a>
+      <a href="javascript:" class="menu" id="menu3">经历</a>
+      <a href="javascript:" class="menu" id="menu4">项目</a>
+      <a href="javascript:" class="menu" id="menu5">联系我</a>
     </div>
   </div>
-  <div class="footer">
-    <div class="copyright">
-      <span>本页面由 Vikeel 编辑于 2017年11月</span>
-    </div>
-  </div>
+<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="./js/resume.js"></script>
 </body>
 </html>
